@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>MyDocu | A Documentation Template in Bootstrap 5</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#2E9264">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#2E9264">
+  <!-- CSS Files -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <!-- Highlight -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+  <!-- Custom styles for this template -->
+  <!-- CSS Inline Styles-->
+    <style>
+       body {
+         min-height: 100vh;
+         min-height: -webkit-fill-available;
+       }
+       html {
+         height: -webkit-fill-available;
+       }
+       .dropdown-toggle { 
+         outline: 0; 
+       }
+       .nav-flush .nav-link {
+         border-radius: 0;
+       }
+       .btn-toggle {
+         display: inline-flex;
+         align-items: center;
+         padding: .25rem .5rem;
+         font-weight: 600;
+         color: rgba(0, 0, 0, .65);
+         background-color: transparent;
+         border: 0;
+       }
+       .btn-toggle:hover,
+       .btn-toggle:focus {
+         color: rgba(0, 0, 0, .85);
+         background-color: #d2f4ea;
+       }
+       .btn-toggle::before {
+         width: 1.25em;
+         line-height: 0;
+         content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+         transition: transform .35s ease;
+         transform-origin: .5em 50%;
+       }
+       .btn-toggle[aria-expanded="true"] {
+         color: rgba(0, 0, 0, .85);
+       }
+       .btn-toggle[aria-expanded="true"]::before {
+         transform: rotate(90deg);
+       }
+       .btn-toggle-nav a {
+         display: inline-flex;
+         padding: .1875rem .5rem;
+         margin-top: .125rem;
+         margin-left: 1.25rem;
+         text-decoration: none;
+       }
+       .btn-toggle-nav a:hover,
+       .btn-toggle-nav a:focus {
+         background-color: #d2f4ea;
+       }
+       .fw-semibold { 
+         font-weight: 600; 
+        }
+       .lh-tight { 
+         line-height: 1.25; 
+        }
+       .scrollarea {
+         overflow-y: auto;
+        }        
+       .offcanvas-start {
+          width: 280px !important;
+        }       
+       .btn-offcanvas {
+         position: fixed;
+         top: 30px;
+         right: 30px;
+         z-index: 99;
+         box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+        }
+        #btn-back-to-top {
+         position: fixed;
+         bottom: 20px;
+         right: 30px;
+         display: none;
+         z-index: 99;
+         box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+        }
+        .modal-backdrop.show {
+         z-index: 999;
+        }
+    </style>
+</head>
+<body> 
+<!-- Button to open the offcanvas sidebar -->
+<button class="btn btn-success btn-offcanvas btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#aside-bar">
+  <i class="fa-solid fa-bars"></i>
+</button> 
+ <!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" id="aside-bar">
+  <div class="offcanvas-header border-bottom">
+    <h1 class="offcanvas-title fw-semibold fs-5"><a href="index.html" class="text-success" style="text-decoration: none;"><i class="fa-solid fa-code"></i> MyDocu</a></h1>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+  <div class="flex-shrink-0 p-3 bg-white">
+     <span class="fs-5 fw-semibold">Documentation</span>
+    <ul class="list-unstyled ps-0">
+      <li class="my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1-collapse" aria-expanded="true">
+          Section 1
+        </button>
+        <div class="collapse show" id="section-1-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#section-1" class="link-dark rounded">Intro</a></li>            
+            <li><a href="#section-1-A" class="link-dark rounded">Part A</a></li>
+            <li><a href="#section-1-B" class="link-dark rounded">Part B</a></li>
+            <li><a href="#section-1-C" class="link-dark rounded">Part C</a></li>
+            <li><a href="#section-1-D" class="link-dark rounded">Part D</a></li>            
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2-collapse" aria-expanded="false">
+          Section 2
+        </button>
+        <div class="collapse" id="section-2-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#section-2" class="link-dark rounded">Intro</a></li>
+            <li><a href="#section-2-A" class="link-dark rounded">Part A</a></li>
+            <li><a href="#section-2-B" class="link-dark rounded">Part B</a></li>
+            <li><a href="#section-2-C" class="link-dark rounded">Part C</a></li>
+            <li><a href="#section-2-D" class="link-dark rounded">Part D</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3-collapse" aria-expanded="false">
+          Section 3
+        </button>
+        <div class="collapse" id="section-3-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#section-3" class="link-dark rounded">Intro</a></li>            
+            <li><a href="#section-3-A" class="link-dark rounded">Part A</a></li>
+            <li><a href="#section-3-B" class="link-dark rounded">Part B</a></li>
+            <li><a href="#section-3-C" class="link-dark rounded">Part C</a></li>
+            <li><a href="#section-3-D" class="link-dark rounded">Part D</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4-collapse" aria-expanded="false">
+          Section 4
+        </button>
+        <div class="collapse" id="section-4-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#section-4" class="link-dark rounded">Intro</a></li>            
+            <li><a href="#section-4-A" class="link-dark rounded">Part A</a></li>
+            <li><a href="#section-4-B" class="link-dark rounded">Part B</a></li>
+            <li><a href="#section-4-C" class="link-dark rounded">Part C</a></li>
+            <li><a href="#section-4-D" class="link-dark rounded">Part D</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <!-- Link Project Github -->
+      <li class="mb-1"><i class="fa-brands fa-github text-secondary"></i> <a href="https://github.com/" class="text-success" style="text-decoration: none;" target="_blank" rel="noopener noreferrer">Project Github</a></li>
+      <!-- Link trigger modal -->
+      <li class="mb-1"><i class="fa-solid fa-info-circle text-secondary"></i> <a href="#license_modal" data-bs-toggle="modal" data-bs-target="#license_Modal" class="text-success" style="text-decoration: none;">Project License</a></li>
+    </ul>
+    <!-- Modal -->
+    <div class="modal fade" id="license_Modal" tabindex="-1" aria-labelledby="license_ModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-scrollable">
+       <div class="modal-content">
+         <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Project License</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+             <p> MIT License<br /><br />
+                 Copyright (c) 2022 ic-myXMB
+                 <br /><br />
+                 Permission is hereby granted, free of charge, to any person obtaining a copy
+                 of this software and associated documentation files (the "Software"), to deal
+                 in the Software without restriction, including without limitation the rights
+                 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                 copies of the Software, and to permit persons to whom the Software is
+                 furnished to do so, subject to the following conditions:
+                 <br /><br />
+                 The above copyright notice and this permission notice shall be included in all
+                 copies or substantial portions of the Software.
+                 <br /><br />
+                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                 SOFTWARE.
+             </p>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+    </div>
+    <!--/. End Modal -->
+  </div>
+</div>
+   <div class="offcanvas-footer border-top text-center mt-auto p-3">
+       <small><p class="love">Made with <i class="fa-solid fa-heart text-danger"></i> by <a class="text-success" href="https://github.com/ic-myxmb" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">ic_myXMB</a></p></small>
+   </div>
+</div>
+<!-- Page Hero -->
+<div class="container-fluid bg-success bg-gradient py-5 mb-5">
+  <div class="py-5 text-center">
+    <h1 class="display-1 fw-bold text-white mb-4"><i class="fa-sharp fa-solid fa-code"></i> MyDocu</h1>
+    <div class="col-lg-6 mx-auto">
+      <h4 class="fw-bold text-white mb-3">A Documentation Template in Bootstrap 5</h4>
+      <h6 class="fw-bold mb-3"><p class="love bg-white rounded">Made with <i class="fa-solid fa-heart text-danger"></i> by <a class="text-success" href="https://github.com/ic-myxmb" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">ic_myXMB</a></p> </h6>
+      <p class="lead mb-4 text-white">Quickly design and customize responsive mobile-first documentation files with Bootstrap, the world’s most popular front-end open source toolkit...</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+<h1 id="section-1" class="fw-bold display-4 border-bottom mb-4 mt-4">Section: 1</h1>
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary bg-gradient rounded box-shadow">
+        <i class="fa-solid fa-code display-4 p-2"></i>
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Section Title</h6>
+          <small> Section Tagline</small>
+        </div>
+      </div>
+<div id="section-1-intro" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3">Intro: </h2> 
+<p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> project documentation.
+</p>
+</div>
+<div id="section-1-A" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3">Part: A</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-1-B" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: B</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6>     
+        <!-- CODE -->
+        <pre id="sampleCode"><code class="language-php rounded">/** PHP Snippet **/
+// Display Errors
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-1-C" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: C</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-html rounded">&lt;!-- HTML Snippet --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /&gt;
+           &lt;title>Title | Tagline&lt;/title&gt;
+&lt;!-- End --&gt;</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-1-D" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: D</h2>
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6>    
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<h1 id="section-2" class="fw-bold display-4 border-bottom mb-4 mt-4">Section: 2</h1>
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary bg-gradient rounded box-shadow">
+        <i class="fa-solid fa-code display-4 p-2"></i>
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Section Title</h6>
+          <small> Section Tagline</small>
+        </div>
+      </div>
+<div id="section-2-intro" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3">Intro: </h2> 
+<p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> project documentation.
+</p>
+</div>      
+<div id="section-2-A" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: A</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6>   
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-2-B" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: B</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-2-C" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: C</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6>   
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-2-D" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: D</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6>   
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<h1 id="section-3" class="fw-bold display-4 border-bottom mb-4 mt-4">Section: 3</h1>
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary bg-gradient rounded box-shadow">
+        <i class="fa-solid fa-code display-4 p-2"></i>
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Section Title</h6>
+          <small> Section Tagline</small>
+        </div>
+      </div>
+<div id="section-3-intro" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3">Intro: </h2> 
+<p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> project documentation.
+</p>
+</div>
+<div id="section-3-A" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: A</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-3-B" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: B</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-3-C" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3 mt-2">Part: C</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-3-D" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+<h2 class="fw-bold border-bottom mb-3 mt-2">Part: D</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<h1 id="section-4" class="fw-bold display-4 border-bottom mb-4 mt-4">Section: 4</h1>
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary bg-gradient rounded box-shadow">
+        <i class="fa-solid fa-code display-4 p-2"></i>
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Section Title</h6>
+          <small> Section Tagline</small>
+        </div>
+      </div>
+<div id="section-4-intro" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+  <h2 class="fw-bold border-bottom mb-3">Intro: </h2> 
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+</div>
+<div id="section-4-A" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+<h2 class="fw-bold border-bottom mb-3 mt-2">Part: A</h2>  
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-4-B" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+<h2 class="fw-bold border-bottom mb-3 mt-2">Part: B</h2>   
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-4-C" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+<h2 class="fw-bold border-bottom mb-3 mt-2">Part: C</h2>   
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="section-4-D" class="my-3 p-3 bg-light bg-gradient rounded shadow-sm">
+<h2 class="fw-bold border-bottom mb-3 mt-2">Part: D</h2> 
+    <h6 class="fw-bold text-secondary mb-1">Code:</h6> 
+        <!-- CODE -->
+        <pre><code class="language-css rounded">/** CSS Snippet **/
+/* en-us */
+.something:lang(en-us):after {
+    content: 'some text for en-us';
+    font-size: 16px;
+    color: #212121;
+}
+/* en-gb */
+.something:lang(en-gb):after {
+    content: 'some text for en-gb';
+    font-size: 16px;
+    color: #212121;
+}
+/** End **/</code></pre>
+<p class="muted">Placeholder text to demonstrate some <a href="javascript:void(0);" title="Hover display popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Stop hovering to close this popover">inline links</a> with popovers. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">real text</a>. And all that just to give you an idea of how popovers would look when used in real-world situations. So hopefully you've now seen how <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">these popovers on links</a> can work in practice, once you use them on <a href="javascript:void(0);" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Click anywhere in the document to close this popover">your own</a> project documentation.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+<!-- Footer -->
+<div class="container">
+  <footer class="py-3 my-4 border-top">
+    <p class="text-center text-muted">&copy; 2022 MyDocu</p>
+  </footer>
+</div>
+<!-- Back To Top Button -->
+<button type="button" class="btn btn-success btn-floating btn-lg" id="btn-back-to-top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+<!-- Back To Top Script  -->
+<script>
+//Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+ scrollFunction();
+};
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  mybutton.style.display = "block";
+} else {
+     mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    <!-- JQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+    <!-- Bootstrap JS --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Highlight JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <!-- Highlight JS-->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+       hljs.highlightElement(el);
+      });
+    });
+  </script>  
+<!-- Highlight initLineNumbers plug -->
+<script>
+(function (w, d) {
+    if (w.hljs) {
+        w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
+        w.hljs.addLineNumbersForCode = addLineNumbersForCode;
+    } else {
+        w.console.error('highlight.js not detected!');
+    }
+    function initLineNumbersOnLoad() {
+        if (d.readyState === 'interactive' || d.readyState === 'complete') {
+            documentReady();
+        } else {
+            w.addEventListener('DOMContentLoaded', function () {
+                documentReady();
+            });
+        }
+    }
+    function addLineNumbersForCode(html) {
+        var num = 1;
+        html = '<span class="ln-num" data-num="' + num + '"></span>' + html;
+        html = html.replace(/\r\n|\r|\n/g, function (a) {
+            num++;
+            return a + '<span class="ln-num" data-num="' + num + '"></span>';
+        });
+        html = '<span class="ln-bg"></span>' + html;
+        return html;
+    }
+    function documentReady() {
+        var elements = d.querySelectorAll('.hljs');
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].className.indexOf('hljs-ln') == -1) {
+                var html = elements[i].innerHTML;
+                html = addLineNumbersForCode(html);
+                elements[i].innerHTML = html;
+                elements[i].classList.add('hljs-ln');
+            }
+        }
+    }
+}(window, document));
+</script>
+<!-- LineNumbers init --> 
+<script>
+hljs.initLineNumbersOnLoad();
+</script>
+<!-- LineNumbers style --> 
+<style>
+.hljs-ln {
+    position: relative;
+    padding-left: 3em !important;
+}
+.hljs-ln .ln-bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 2.2em;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.18);
+    margin-left: 0.5em;
+}
+.hljs-ln .ln-num {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hljs-ln .ln-num::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    color: #777;
+    font-style: normal;
+    font-weight: normal;
+    content: attr(data-num);
+}
+pre, code {
+    padding: 0;
+    margin: 0;
+}
+</style>
+<!-- PRE CODE Select All / Copy JS -->
+<script type="text/javascript">
+var sheet = document.createElement('style')
+sheet.innerHTML = (".mydocu_selectall_wrap { position: relative; }" +
+".mydocu_selectall { /*float: right;*/ position: absolute; top: 15px; right: 20px; font-family: sans-serif; color: #767E86; }" +
+".mydocu_selectall:hover { color: #339467; cursor: pointer; }");
+document.body.appendChild(sheet);
+$('pre:has(code)').each(function(){
+    function selectText(element) {
+        var doc = document
+            , text = element
+            , range, selection
+        ;    
+        if (doc.body.createTextRange) { //ms
+            range = doc.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) { //all others
+            selection = window.getSelection();        
+            range = doc.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }
+    var input = $('<div class="mydocu_selectall text-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cut & Copy"><i class="fa-sharp fa-solid fa-scissors"></i> <i class="fas fa-copy"></i></div>'),
+        that = this;
+    input.click(function(){
+        // selected
+        selectText($('code',that)[0]);
+        // copy the selected
+        document.execCommand('copy');
+    });
+    $(this).wrap('<div class="mydocu_selectall_wrap mb-4">').after(input);
+});
+</script> 
+<!-- Tooltips Init -->
+<script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+</script> 
+<!-- Popovers init -->
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl);
+});
+</script>
+</body>
+</html>
